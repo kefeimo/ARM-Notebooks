@@ -14,6 +14,32 @@ parts:
     - file: VAPs/README.md
       sections:
         - file: VAPs/squire/intro-to-squire.ipynb
+    - file: VAPs/datastream_quicklook/datastream.ipynb
+      sections:
+        
+        # - caption: AOD
+        - file: VAPs/datastream_quicklook/AOD/AOD_tutorial.ipynb
+        - file: VAPs/datastream_quicklook/AOD/sasheniraod.c1.ipynb
+        - file: VAPs/datastream_quicklook/AOD/sashevisaod.c1.ipynb
+
+        # - caption: AOP
+        - file: VAPs/datastream_quicklook/AOP/AOP_tutorial.ipynb
+        - file: VAPs/datastream_quicklook/AOP/aopclap1flynn1m.c1.ipynb
+        - file: VAPs/datastream_quicklook/AOP/aoppsap1flynn1h.c1.ipynb
+        - file: VAPs/datastream_quicklook/AOP/aoppsap1flynn1m.c1.ipynb
+
+        # - caption: BEFLUX
+        - file: VAPs/datastream_quicklook/BEFLUX/BEFLUX_tutorial.ipynb
+        - file: VAPs/datastream_quicklook/BEFLUX/beflux1long.c1.ipynb
+        - file: VAPs/datastream_quicklook/BEFLUX/qcflux1long.c1.ipynb
+
+        # - caption: RADFLUXANAL
+        - file: VAPs/datastream_quicklook/RADFLUXANAL/RADFLUXANAL_tutorial.ipynb
+        - file: VAPs/datastream_quicklook/RADFLUXANAL/radflux1long.c1.ipynb
+        - file: VAPs/datastream_quicklook/RADFLUXANAL/radflux1long.c2.ipynb
+        - file: VAPs/datastream_quicklook/RADFLUXANAL/radfluxbrs1long.c2.ipynb
+
+
   - caption: ARM/ASR PI Meeting 2023
     chapters:
     - file: Tutorials/arm-asr-pi-meeting-2023/README.md
