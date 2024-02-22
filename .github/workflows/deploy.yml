@@ -18,6 +18,9 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         python-version: [3.8]
+    permissions:
+      pages: write
+      id-token: write
     steps:
     - uses: actions/checkout@v2
 
