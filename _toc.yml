@@ -13,6 +13,7 @@ parts:
     chapters: 
     - file: VAPs/README.md
       sections:
+      title: SQUIRE demo
         - file: VAPs/squire/intro-to-squire.ipynb
 
     - file: VAPs/datastream_quicklook/datastream.ipynb
