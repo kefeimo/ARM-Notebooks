@@ -1,0 +1,1265 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>AOPCLAP1FLYNN1M.C1 Notebook &#8212; ARM Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'VAPs/datastream_quicklook/AOP/AOP_tutorial';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="AOPCLAP1FLYNN1M.C1 Plots" href="aopclap1flynn1m.c1.html" />
+    <link rel="prev" title="SASHEVISAOD.C1 Plots" href="../AOD/sashevisaod.c1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/arm_logo.png" class="logo__image only-light" alt="ARM Tutorials - Home"/>
+    <script>document.write(`<img src="../../../_static/arm_logo.png" class="logo__image only-dark" alt="ARM Tutorials - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../README.html">
+                    ARM-Notebooks
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started.html">Accessing the Compute Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to Contribute</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Templates/notebook-template.html">ARM Notebook Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Templates/tutorial-schedule.html">Tutorial Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Value-added Products</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../README.html">Value Added Products</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../squire/intro-to-squire.html">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../datastream.html">Data Stream Quick Looks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../AOD/AOD_tutorial.html">SASHENIRAOD.C1 Notebook</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../AOD/sasheniraod.c1.html">SASHENIRAOD.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../AOD/sashevisaod.c1.html">SASHEVISAOD.C1 Plots</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">AOPCLAP1FLYNN1M.C1 Notebook</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="aopclap1flynn1m.c1.html">AOPCLAP1FLYNN1M.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aoppsap1flynn1h.c1.html">AOPPSAP1FLYNN1H.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aoppsap1flynn1m.c1.html">AOPPSAP1FLYNN1M.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BEFLUX/BEFLUX_tutorial.html">BEFLUX1LONG.C1 Notebook</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../BEFLUX/beflux1long.c1.html">BEFLUX1LONG.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BEFLUX/qcflux1long.c1.html">QCFLUX1LONG.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RADFLUXANAL/RADFLUXANAL_tutorial.html">RADFLUX1LONG.C1 Notebook</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../RADFLUXANAL/radflux1long.c1.html">RADFLUX1LONG.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RADFLUXANAL/radflux1long.c2.html">RADFLUX1LONG.C2 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RADFLUXANAL/radfluxbrs1long.c2.html">RADFLUXBRS1LONG.C2 Plots</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/README.html">Open Science Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/python_basics_tutorial/python-basics.html">Python Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/pandas_xarray_tutorial/Pandas_Xarray_intro.html">Starting with Scientific Libraries in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-basics.html">Py-ART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/ACT_tutorial/ACT_Tutorial_TRACER.html">ACT Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/PySP2_tutorial/PySP2_tutorial.html">PySP2</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/EMC2_tutorial/EMC2_ARM_ASR_2023_Tutorial.html">Apply EMC² to an E3SM Hindcast Output</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science Workshop</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/presentations/view-abstracts.html">Workshop Abstracts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/day1-overview.html">Day 1 - Introductions!</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/jupyter-intro.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray.html">Working with Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/github-intro.html">An Introduction to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/forking_cloning.html">Forking a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/branching-forking-github-ui.html">Branching and Pull Requests on the Github Website</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/day2-overview.html">Day 2 - Data + Packages</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ARM-Data-Access.html">Accessing ARM Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_diurnalcycle.html">ESMAC: Generate diurnal cycle of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_bar_composition.html">ESMAC: Generate bar plot for aerosol composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_hist.html">ESMAC: Generate a 1-D Historgram Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.html">Using EMC² to Process E3SM Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/day3-overview.html">Day 3 - MetPy and ACT</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/MetPy%2002%20-%20Making%20a%20SkewT.html">MetPy Tutorial - Making a Skew-T!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/act-basics.html">ACT Basics</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/day4-overview.html">Day 3 - Py-ART and Pangeo</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/pyart-basics.html">PyART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/pyart-corrections.html">Py-ART Corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/xarray.html">Introduction to Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/datastream_quicklook/AOP/AOP_tutorial.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/VAPs/datastream_quicklook/AOP/AOP_tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>AOPCLAP1FLYNN1M.C1 Notebook</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AOPCLAP1FLYNN1M.C1 Notebook</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-content">Table of Content</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access-the-data">Access the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-data">Explore the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-data">Plot the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Access the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-retrieve-the-data">How to retrieve the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-path-and-file-name-conventions">Data path and file name conventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Explore the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#netcdf-data-structure">NetCDF Data structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xarray-essentials">Xarray essentials</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-variable-vs-coordinates-vs-dimenssions">Discussion: variable vs. coordinates vs. dimenssions.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xarray-variable">Xarray Variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-properties">Variable properties</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-preprocessing-skipped">Data cleaning/Preprocessing (skipped)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dimenssional-basic-time-series-plot">1-dimenssional basic time series plot</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dimenssional-basic-plot">2-dimenssional basic plot</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qc-plotting-optional">qc-plotting (optional)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-choose-variables-to-plot-from-a-dropdown-menu">bonus: choose variables to plot from a dropdown menu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="aopclap1flynn1m-c1-notebook">
+<h1>AOPCLAP1FLYNN1M.C1 Notebook<a class="headerlink" href="#aopclap1flynn1m-c1-notebook" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.arm.gov/capabilities/vaps/aop">Click here</a> for more information about this vap.</p>
+<p>In this notebook, we demonstrate the workflow to explore ARM vap data (using aopclap1flynn1m as an example.) Value-added products (VAPs) are higher-order data products that have been analyzed and processed to ease scientists’ use of ARM data in atmospheric research and global climate models.
+Here is the main content we will cover.</p>
+</section>
+<section id="table-of-content">
+<h1>Table of Content<a class="headerlink" href="#table-of-content" title="Permalink to this heading">#</a></h1>
+<section id="access-the-data">
+<h2>Access the data<a class="headerlink" href="#access-the-data" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>How to retrieve the data</p></li>
+<li><p>Data path and file name conventions</p></li>
+<li><p>Load data</p></li>
+</ul>
+</section>
+<section id="explore-the-data">
+<h2>Explore the data<a class="headerlink" href="#explore-the-data" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>NetCDF Data structure</p></li>
+<li><p>Xarray essentials</p></li>
+<li><p>Xarray Variable</p></li>
+</ul>
+</section>
+<section id="plot-the-data">
+<h2>Plot the data<a class="headerlink" href="#plot-the-data" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">import</span> <span class="nn">act</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">import</span> <span class="nn">glob</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Access the data<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="how-to-retrieve-the-data">
+<h3>How to retrieve the data<a class="headerlink" href="#how-to-retrieve-the-data" title="Permalink to this heading">#</a></h3>
+<p>We assume the path “/data/archive” is available where you are running this notebook. You can use <code class="docutils literal notranslate"><span class="pre">os.path.exists(&quot;/data/archive&quot;)</span></code> to verify if the path exists at your machine.</p>
+</section>
+<section id="data-path-and-file-name-conventions">
+<h3>Data path and file name conventions<a class="headerlink" href="#data-path-and-file-name-conventions" title="Permalink to this heading">#</a></h3>
+<p>There several common terminologies regarding ARM data, for example, data-stream-name, data-level, site, facility, instrument, etc. (For more details, please see <a class="reference external" href="https://www.google.com/search?q=arm+datastream+facility+cite+definition&amp;rlz=1C1GCEJ_enUS1029US1029&amp;ei=hb41ZICrBPukqtsPvMODIA&amp;ved=0ahUKEwjAgeiS0aL-AhV7kmoFHbzhAAQQ4dUDCBA&amp;uact=5&amp;oq=arm+datastream+facility+cite+definition&amp;gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQogQyBQgAEKIEMgUIABCiBDIFCAAQogQyBQgAEKIEOgoIABBHENYEELADOgoIIRCgARDDBBAKSgQIQRgAUJ4DWIoOYO0PaAFwAXgAgAGMAYgBuQmSAQMyLjmYAQCgAQHIAQjAAQE&amp;sclient=gws-wiz-serp">ARM Data File Standards Version 1.2</a>.)</p>
+<p>For example, this notebook is called <code class="docutils literal notranslate"><span class="pre">aopclap1flynn1m.c1</span></code>, where <code class="docutils literal notranslate"><span class="pre">aopclap1flynn1m</span></code> is the “datastream name”, and the <code class="docutils literal notranslate"><span class="pre">{process.ds_class_level}}</span></code> is the “data level”.</p>
+<p>This datastream also contains site <code class="docutils literal notranslate"><span class="pre">sgp</span></code> and facility <code class="docutils literal notranslate"><span class="pre">C1</span></code>. (Note: individual datastream might have multiple site-facility pairs.)
+In such a case, the data of this data-stream is stored at <code class="docutils literal notranslate"><span class="pre">/data/archive/sgp/sgpaopclap1flynn1mC1.c1</span></code>, which is in the format of <code class="docutils literal notranslate"><span class="pre">&lt;DATA_DIR&gt;/&lt;site&gt;/&lt;site&gt;&lt;DATASTREAM_NAME&gt;&lt;facility&gt;.&lt;DATA_LEVEL&gt;</span></code>. We can use the following method to assign the data-stream directory <code class="docutils literal notranslate"><span class="pre">datastream_dir</span> <span class="pre">=</span> <span class="pre">os.path.join(DATA_DIR,</span> <span class="pre">site,</span> <span class="pre">site</span> <span class="pre">+</span> <span class="pre">DATASTREAM_NAME</span> <span class="pre">+</span> <span class="pre">facility</span> <span class="pre">+</span> <span class="pre">'.'</span> <span class="pre">+</span> <span class="pre">DATA_LEVEL</span> <span class="pre">)</span></code></p>
+<p>The data files under datastream_dir also follows naming conventions. But once reach the datastream_dir level, the most import file naming convention to differentiate the files is “yyyyMMdd.hhmmss”, which comes handy to filter out files based on datetime. For example, we can use <code class="docutils literal notranslate"><span class="pre">glob.glob(f'{datastream_dir}/*.200709*.*')</span></code> to filter files in 2007 September.</p>
+<p>(Note: refer to the https://adc.arm.gov/discovery/#/ and https://adc.arm.gov/solr8/metadata/select API to explore ARM datastream and assoicated available sites and facilities</p>
+<p>Please see the following examples in action</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verify if DATA_DIR path exists</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s2">&quot;/data/archive&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Speicify datastream_dir following the path conventions and check its existence</span>
+<span class="n">DATASTREAM_NAME</span> <span class="o">=</span> <span class="s2">&quot;aopclap1flynn1m&quot;</span>
+<span class="n">DATA_LEVEL</span> <span class="o">=</span> <span class="s2">&quot;c1&quot;</span>
+<span class="n">site</span> <span class="o">=</span> <span class="s2">&quot;sgp&quot;</span>
+<span class="n">facility</span> <span class="o">=</span> <span class="s2">&quot;C1&quot;</span>
+<span class="n">datastream_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="n">site</span><span class="p">,</span> <span class="n">site</span> <span class="o">+</span> <span class="n">DATASTREAM_NAME</span> <span class="o">+</span> <span class="n">facility</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">DATA_LEVEL</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">datastream_dir</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">datastream_dir</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bonus: list 5 (random) files under datastream_dir</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">datastream_dir</span><span class="p">)</span>
+<span class="n">files</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bonus: get most recent file</span>
+<span class="n">list_of_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datastream_dir</span><span class="si">}</span><span class="s2">/*&quot;</span><span class="p">)</span> <span class="c1"># * means all if need specific format then *.csv</span>
+<span class="n">latest_file</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">list_of_files</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getctime</span><span class="p">)</span>
+<span class="n">latest_file</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bonus sort datastream files based on datetime</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">datastream_dir</span><span class="p">)</span>
+<span class="n">file_sorted</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">file_sorted</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">file_sorted</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+
+<span class="c1"># to reverse</span>
+<span class="n">file_sorted_reverse</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  
+<span class="n">file_sorted_reverse</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file_sorted_reverse</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bonus: pattern matching</span>
+<span class="c1"># filter the 200709** files under datastream_dir</span>
+<span class="n">files_filter</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">datastream_dir</span><span class="si">}</span><span class="s1">/*.200709*.*&#39;</span><span class="p">)</span>
+<span class="n">files_filter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bonus: use armnotebook_utils.file_filter (TODO) to filter files based on datastream info </span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-data">
+<h3>Load data<a class="headerlink" href="#load-data" title="Permalink to this heading">#</a></h3>
+<p>The arm data is stored in [NetCDF](https://en.wikipedia.org/wiki/NetCDF#:~:text=%22NetCDF%20(network%20Common%20Data%20Form,format%20for%20representing%20scientific%20data.) format. We can use xarray’s <code class="docutils literal notranslate"><span class="pre">open_dataset</span></code> method to load single file, or <code class="docutils literal notranslate"><span class="pre">open_mfdataset</span></code> to open multiple files. (Note: the latter will still return a single xarray dataset object by combining multiple files.)</p>
+<p>Note: open_dataset keeps the file handle open and lazy loads its contents. All parameters are passed directly to open_dataset. It is a preferable method over load_dataset for memory-effiency. (more details, please see <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.open_dataset.html">xarray.open_dataset</a>)</p>
+<p>See the following example in action</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># open single file</span>
+<span class="n">full_path</span> <span class="o">=</span> <span class="n">latest_file</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span>
+<span class="n">ds_single</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span>
+<span class="n">ds_single</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ds_single</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ds_single</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># open multiple files</span>
+<span class="n">n_files</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">full_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datastream_dir</span><span class="p">,</span> <span class="n">f_path</span><span class="p">)</span>  <span class="k">for</span> <span class="n">f_path</span> <span class="ow">in</span> <span class="n">file_sorted_reverse</span><span class="p">[:</span><span class="n">n_files</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_paths</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span> <span class="c1"># Note: sometimes multiple files cannot be merged, so we used try except here.</span>
+    <span class="n">ds_mutiple</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">full_paths</span><span class="p">)</span>
+    <span class="c1"># ds_mutiple</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ds_mutiple</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ds_mutiple</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>Explore the data<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="netcdf-data-structure">
+<h3>NetCDF Data structure<a class="headerlink" href="#netcdf-data-structure" title="Permalink to this heading">#</a></h3>
+<p>(If you are confident with NetCDF basics and xarray essentials, feel free to skip this session.)
+Before we dive into data exploration, there are some eseential concpets we should be familiar with (shown below):</p>
+<ul class="simple">
+<li><p>Dataset</p></li>
+<li><p>Data array</p></li>
+<li><p>Variable</p></li>
+<li><p>Dimenssion</p></li>
+<li><p>Coordinate</p></li>
+<li><p>Data Type</p></li>
+<li><p>Meta Data (Attributes)</p></li>
+</ul>
+<p>We will not go into details about NetCDF basics and here are some references you might find helpful</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://iprc.soest.hawaii.edu/users/xfu/tool/guidef-7.html#">Components of a NetCDF Dataset</a></p></li>
+<li><p><a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">Network Common Data Form (NetCDF)</a> and <a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/time/recs.html">A Brief History of (netCDF) Time</a></p></li>
+</ul>
+</section>
+<section id="xarray-essentials">
+<h3>Xarray essentials<a class="headerlink" href="#xarray-essentials" title="Permalink to this heading">#</a></h3>
+<p>Earlier we introduced the xarray pacakge and used <code class="docutils literal notranslate"><span class="pre">open_dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">open_mfdataset</span></code> to retrieve NetCDF data file as an xarray Dataset object. Recall that you can review the data in a notebook by using <code class="docutils literal notranslate"><span class="pre">print(ds)</span></code> or <code class="docutils literal notranslate"><span class="pre">ds</span></code>.</p>
+<p>Using xarray to retrieve the aforementioned NetCDF basics is straightforwared. In general,</p>
+<ul class="simple">
+<li><p>Dataset: <code class="docutils literal notranslate"><span class="pre">ds</span></code></p></li>
+<li><p>Data array: <code class="docutils literal notranslate"><span class="pre">ds.variables</span></code></p></li>
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">ds.ds.variables</span></code></p></li>
+<li><p>Dimenssion: <code class="docutils literal notranslate"><span class="pre">ds.dims</span></code></p></li>
+<li><p>Coordinate: <code class="docutils literal notranslate"><span class="pre">ds.coords</span></code></p></li>
+<li><p>Data Type: <code class="docutils literal notranslate"><span class="pre">type</span></code></p></li>
+<li><p>Meta Data (Attributes)</p></li>
+</ul>
+<p>Also, here are some references if you are new to xarray</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://tutorial.xarray.dev/overview/xarray-in-45-min.html">Xarray in 45 minutes</a></p></li>
+<li><p><a class="reference external" href="https://towardsdatascience.com/handling-netcdf-files-using-xarray-for-absolute-beginners-111a8ab4463f">Handling NetCDF Files using XArray for Absolute Beginners</a></p></li>
+</ul>
+<p>Try the following commands in action</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">ds_single</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dataset </span>
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data array, Variable</span>
+<span class="c1"># Note: the info can be overwhelming. Do not attempt to grasp everything at the first glance.</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">variables</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dimenssions</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">dims</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># coordinates</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">coords</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Meta Data (Attributes)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">attrs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># type</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ds</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">dims</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">attrs</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bonus: retrieve variable names only</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="discussion-variable-vs-coordinates-vs-dimenssions">
+<h4>Discussion: variable vs. coordinates vs. dimenssions.<a class="headerlink" href="#discussion-variable-vs-coordinates-vs-dimenssions" title="Permalink to this heading">#</a></h4>
+<p>From <a class="reference external" href="https://iprc.soest.hawaii.edu/users/xfu/tool/guidef-7.html#">Components of a NetCDF Dataset</a>:</p>
+<ul class="simple">
+<li><p>Dimession: A dimension may be used to represent a real physical dimension, for example, time, latitude, longitude, or height. A dimension might also be used to index other quantities, for example station or model-run-number.
+A netCDF dimension has both a name and a length. A dimension length is an arbitrary positive integer, except that one dimension in a netCDF dataset can have the length UNLIMITED.</p></li>
+<li><p>Variables: Variables are used to store the bulk of the data in a netCDF dataset. A variable represents an array of values of the same type. A scalar value is treated as a 0-dimensional array. A variable has a name, a data type, and a shape described by its list of dimensions specified when the variable is created. A variable may also have associated attributes, which may be added, deleted or changed after the variable is created.</p></li>
+<li><p>Coordinate (Variables): It is legal for a variable to have the same name as a dimension. Such variables have no special meaning to the netCDF library. However there is a convention that such variables should be treated in a special way by software using this library.
+A variable with the same name as a dimension is called a coordinate variable. It typically defines a physical coordinate corresponding to that dimension.</p></li>
+</ul>
+<p>Tips: By definition, coordinates and dimenssions are also variable. For example ds.time is a coordinate but it is also a special variable. But in practice, when we talk about variable, it implies regular/non-coordinate variable. We will use this convention for the remaining notebook.</p>
+</section>
+</section>
+<section id="xarray-variable">
+<h3>Xarray Variable<a class="headerlink" href="#xarray-variable" title="Permalink to this heading">#</a></h3>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">ds.variables</span></code> to access varialbes of a dataset. But many times viewing print-out the whole datasets can be overwhemling. Instead, we would work on the individual variable (also called Xarray data array.) using the <code class="docutils literal notranslate"><span class="pre">ds[var_name]</span></code> syntax, where <code class="docutils literal notranslate"><span class="pre">var_name</span></code> is the name of the variable. See the following examples in action.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]))</span>
+<span class="n">ds</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="variable-properties">
+<h4>Variable properties<a class="headerlink" href="#variable-properties" title="Permalink to this heading">#</a></h4>
+<p>For individual varible, the following properties are mostly used with the assocaited xarray method to retrieve them. (assuming var = ds[var_name])</p>
+<ul class="simple">
+<li><p>name: <code class="docutils literal notranslate"><span class="pre">var.name</span></code></p></li>
+<li><p>data content: <code class="docutils literal notranslate"><span class="pre">var.data</span></code></p></li>
+<li><p>attributes: <code class="docutils literal notranslate"><span class="pre">var.attrs</span></code></p></li>
+<li><p>dimenstions: <code class="docutils literal notranslate"><span class="pre">var.dims</span></code></p></li>
+<li><p>data type: <code class="docutils literal notranslate"><span class="pre">var.data.dtype</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_name</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;var.name: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;var.data: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;var.attrs: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">attrs</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;var.dims: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;var.data.dtype: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bonus: indivdual variable info table (collect and display variable info as a tabular format)</span>
+<span class="n">df_info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">df_info</span><span class="p">[</span><span class="s2">&quot;var_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span>
+<span class="n">df_info</span><span class="p">[</span><span class="s2">&quot;dims&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_info</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">ds</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+<span class="n">df_info</span><span class="p">[</span><span class="s2">&quot;is_dim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_info</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+<span class="n">df_info</span><span class="p">[</span><span class="s2">&quot;n_dim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_info</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">dims</span><span class="p">))</span>
+<span class="n">df_info</span><span class="p">[</span><span class="s2">&quot;attrs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_info</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">ds</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">)</span>
+<span class="n">df_info</span><span class="p">[</span><span class="s2">&quot;dtype&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_info</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">ds</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+<span class="n">df_info</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="data-cleaning-preprocessing-skipped">
+<h3>Data cleaning/Preprocessing (skipped)<a class="headerlink" href="#data-cleaning-preprocessing-skipped" title="Permalink to this heading">#</a></h3>
+<p>Data cleaning and preprocessing is an important stage in the the data analysis pipeline. However it will be out of the scope of this notebook. For more information about data cleaning and preprocessing basics, here are some references.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://earth-env-data-science.github.io/lectures/xarray/xarray.html">Xarray Fundamentals</a></p></li>
+<li><p><a class="reference external" href="http://gallery.pangeo.io/repos/pangeo-data/pangeo-tutorial-gallery/xarray.html">Xarray Tutorial — Pangeo Gallery documentation</a></p></li>
+<li><p><a class="reference external" href="https://realpython.com/python-data-cleaning-numpy-pandas/">Pythonic Data Cleaning With pandas and NumPy</a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/python/pandas/pandas_cleaning.asp">Pandas - Cleaning Data</a></p></li>
+</ul>
+</section>
+<section id="plotting">
+<h3>Plotting<a class="headerlink" href="#plotting" title="Permalink to this heading">#</a></h3>
+<p>Data visualization (or plotting) is another important data analysis topic and deserves its own discussion. Here in this notebook we will only demonstrate basic tool for simple data visualization tasks.</p>
+<p>Here are some reference you might find useful:</p>
+<ul class="simple">
+<li><p>xarray plotting: https://docs.xarray.dev/en/stable/user-guide/plotting.html</p></li>
+<li><p>Atmospheric Community Toolkit (ACT): https://arm-doe.github.io/ACT/index.html</p></li>
+</ul>
+<p>Note: this notebook is auto-generated using a template. It uses a general idea to select variable(s) to plot and is not customized to each indivdual notebook. Feel free to change the variables in intrrests, especially certain figure is failed to plot.</p>
+<section id="dimenssional-basic-time-series-plot">
+<h4>1-dimenssional basic time series plot<a class="headerlink" href="#dimenssional-basic-time-series-plot" title="Permalink to this heading">#</a></h4>
+<p>For the following plot we would like to find variables such that</p>
+<ul class="simple">
+<li><p>it has one and only one dimession</p></li>
+<li><p>“time” is its coordinate variable</p></li>
+<li><p>it is not a dimenssion itself,</p></li>
+<li><p>it is not a special variable with substrings within [“time”, “lat”, “lon”, “alt”, “qc”]</p></li>
+</ul>
+<p>Please see the following example in action. (For more details about pandas filtering, please see the following references.)</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/22591174/pandas-multiple-conditions-while-indexing-data-frame-unexpected-behavior">pandas: multiple conditions while indexing data frame</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.apply.html">pandas.DataFrame.apply</a></p></li>
+<li><p>[How to test if a string contains one of the substrings in a list…](https://stackoverflow.com/questions/26577516/how-to-test-if-a-string-contains-one-of-the-substrings-in-a-list-in-pandas</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># (pandas query) filter n_dim==1, non-dimenssional, and not contains the following substrings</span>
+<span class="n">exclude_substrings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;lat&quot;</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">,</span> <span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;qc&quot;</span><span class="p">]</span>
+<span class="n">df_filter</span> <span class="o">=</span> <span class="n">df_info</span><span class="p">[(</span><span class="n">df_info</span><span class="o">.</span><span class="n">n_dim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span>
+                    <span class="p">(</span><span class="n">df_info</span><span class="o">.</span><span class="n">dims</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;time&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">))</span> <span class="o">&amp;</span>
+                    <span class="p">(</span><span class="n">df_info</span><span class="o">.</span><span class="n">is_dim</span><span class="o">==</span><span class="kc">False</span><span class="p">)</span> <span class="o">&amp;</span>
+                    <span class="p">(</span><span class="o">~</span><span class="n">df_info</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exclude_substrings</span><span class="p">)))</span>
+                   <span class="p">]</span>
+<span class="n">df_filter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">var_1d</span> <span class="o">=</span> <span class="n">df_filter</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">var_1d</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: if failed, change to another variable to plot.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">ds</span><span class="p">[</span><span class="n">var_1d</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dimenssional-basic-plot">
+<h4>2-dimenssional basic plot<a class="headerlink" href="#dimenssional-basic-plot" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># (pandas query) filter n_dim==2, non-dimenssional, and not contains the following substrings</span>
+<span class="n">exclude_substrings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;lat&quot;</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">,</span> <span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;qc&quot;</span><span class="p">]</span>
+<span class="n">df_filter_2</span> <span class="o">=</span> <span class="n">df_info</span><span class="p">[(</span><span class="n">df_info</span><span class="o">.</span><span class="n">n_dim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span>
+                      <span class="p">(</span><span class="n">df_info</span><span class="o">.</span><span class="n">dims</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;time&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">))</span> <span class="o">&amp;</span>
+                      <span class="p">(</span><span class="n">df_info</span><span class="o">.</span><span class="n">is_dim</span><span class="o">==</span><span class="kc">False</span><span class="p">)</span> <span class="o">&amp;</span>
+                      <span class="p">(</span><span class="o">~</span><span class="n">df_info</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exclude_substrings</span><span class="p">)))</span>
+                     <span class="p">]</span>
+<span class="n">df_filter_2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">var_2d</span> <span class="o">=</span> <span class="n">df_filter_2</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">var_2d</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: if failed, change to another variable to plot.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="n">var_2d</span><span class="p">]</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+    <span class="c1"># ds[var_2d].plot()</span>
+
+    <span class="c1"># conventionally, use &quot;time&quot; as x-axis</span>
+    <span class="n">ds</span><span class="p">[</span><span class="n">var_2d</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="qc-plotting-optional">
+<h4>qc-plotting (optional)<a class="headerlink" href="#qc-plotting-optional" title="Permalink to this heading">#</a></h4>
+<p>Note: act qc plotting has more strict requirement, one of them is the associated qc variable need to have “flag_masks” attributes. Which is added by using ds = act.io.armfiles.read_netcdf(files_list), then ds.clean.cleanup()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">ds_act</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">armfiles</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">full_path</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ds_act</span><span class="p">))</span>
+    <span class="n">ds_act</span><span class="o">.</span><span class="n">clean</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+
+    <span class="c1"># or </span>
+    <span class="c1"># ds.clean.cleanup()</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="n">ds_act</span> <span class="o">=</span> <span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter valid variables for ACT qc plotting</span>
+<span class="n">condition</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;qc_&quot;</span> <span class="o">+</span> <span class="n">df_info</span><span class="o">.</span><span class="n">var_name</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">ds_act</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;flag_masks&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> 
+                                             <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">exclude_substrings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;lat&quot;</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">,</span> <span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;qc&quot;</span><span class="p">]</span>
+<span class="n">df_filter_3</span> <span class="o">=</span> <span class="n">df_info</span><span class="p">[(</span><span class="n">df_info</span><span class="o">.</span><span class="n">is_dim</span><span class="o">==</span><span class="kc">False</span><span class="p">)</span> <span class="o">&amp;</span>
+                      <span class="p">(</span><span class="n">df_info</span><span class="o">.</span><span class="n">dims</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;time&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">))</span> <span class="o">&amp;</span>
+                      <span class="p">(</span><span class="o">~</span><span class="n">df_info</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exclude_substrings</span><span class="p">)))</span> <span class="o">&amp;</span>
+                      <span class="n">condition</span>
+       <span class="p">]</span>
+<span class="n">df_filter_3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># QC Plot</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">qc_variable</span> <span class="o">=</span> <span class="n">df_filter_3</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">qc_variable</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    
+<span class="k">try</span><span class="p">:</span>
+
+    <span class="c1"># Plot</span>
+    <span class="n">qc_display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds_act</span><span class="p">)</span>
+    <span class="n">qc_display</span><span class="o">.</span><span class="n">add_subplots</span><span class="p">((</span><span class="mi">2</span><span class="p">,),</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mf">9.5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">qc_ax</span> <span class="o">=</span> <span class="n">qc_display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">qc_variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span> <span class="n">set_title</span><span class="o">=</span><span class="s2">&quot;QC results on field: &quot;</span> <span class="o">+</span> <span class="n">qc_variable</span><span class="p">,)</span>
+    <span class="n">qc_ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">qc_display</span><span class="o">.</span><span class="n">qc_flag_block_plot</span><span class="p">(</span><span class="n">qc_variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+    <span class="n">qc_ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UTC Time starts at </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bonus-choose-variables-to-plot-from-a-dropdown-menu">
+<h4>bonus: choose variables to plot from a dropdown menu<a class="headerlink" href="#bonus-choose-variables-to-plot-from-a-dropdown-menu" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Valid variables filtering</span>
+<span class="n">exclude_substrings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;lat&quot;</span><span class="p">,</span> <span class="s2">&quot;lon&quot;</span><span class="p">,</span> <span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;qc&quot;</span><span class="p">]</span>
+<span class="n">df_filter_4</span> <span class="o">=</span> <span class="n">df_info</span><span class="p">[(</span><span class="n">df_info</span><span class="o">.</span><span class="n">is_dim</span><span class="o">==</span><span class="kc">False</span><span class="p">)</span> <span class="o">&amp;</span>
+                      <span class="p">(</span><span class="n">df_info</span><span class="o">.</span><span class="n">dims</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;time&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">))</span> <span class="o">&amp;</span>
+                      <span class="p">(</span><span class="o">~</span><span class="n">df_info</span><span class="o">.</span><span class="n">var_name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exclude_substrings</span><span class="p">)))</span>
+                     <span class="p">]</span>
+<span class="n">df_filter_4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example 1: using xarray plot</span>
+
+<span class="c1"># Uncomment the following cell to try the interactive plot (ctrl + /)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %matplotlib widget</span>
+<span class="c1"># plt.clf()</span>
+
+<span class="c1"># fig, ax = plt.subplots(figsize=(10, 4))</span>
+
+<span class="c1"># available_variables = df_filter_4.var_name.values</span>
+<span class="c1"># @widgets.interact(var=available_variables)</span>
+<span class="c1"># def update(var = available_variables[0]):</span>
+<span class="c1">#     fig.clear() # Remove old lines from plot and plot new one</span>
+<span class="c1">#     if len(ds[var].dims)==2:</span>
+<span class="c1">#         ds[var].plot(x=&quot;time&quot;, add_colorbar=False)</span>
+<span class="c1">#     else:</span>
+<span class="c1">#         ds[var].plot()</span>
+<span class="c1">#     plt.grid()</span>
+<span class="c1">#     plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># example 2: using act plot</span>
+
+<span class="c1"># Uncomment the following cell to try the interactive plot (ctrl + /)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %matplotlib widget</span>
+<span class="c1"># plt.clf()</span>
+
+<span class="c1"># available_variables = df_filter_4.var_name.values</span>
+
+
+<span class="c1"># @widgets.interact(var=available_variables)</span>
+<span class="c1"># def update(var = available_variables[0]):</span>
+
+<span class="c1">#     i_display = act.plotting.TimeSeriesDisplay(ds_act)</span>
+<span class="c1">#     i_display.add_subplots((1,), figsize=(10, 4))</span>
+<span class="c1">#     ax = i_display.plot(var, subplot_index=(0,), set_title=f&quot;{var} ({ds_act[var].attrs[&#39;long_name&#39;]})&quot;,)</span>
+
+<span class="c1">#     ax.set_xlabel(f&quot;UTC Time starts at {ds.time.data[0]}&quot;)</span>
+<span class="c1">#     ax.grid()</span>
+<span class="c1">#     plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./VAPs/datastream_quicklook/AOP"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../AOD/sashevisaod.c1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">SASHEVISAOD.C1 Plots</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="aopclap1flynn1m.c1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AOPCLAP1FLYNN1M.C1 Plots</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AOPCLAP1FLYNN1M.C1 Notebook</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-content">Table of Content</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access-the-data">Access the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-data">Explore the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-data">Plot the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Access the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-retrieve-the-data">How to retrieve the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-path-and-file-name-conventions">Data path and file name conventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Explore the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#netcdf-data-structure">NetCDF Data structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xarray-essentials">Xarray essentials</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-variable-vs-coordinates-vs-dimenssions">Discussion: variable vs. coordinates vs. dimenssions.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#xarray-variable">Xarray Variable</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-properties">Variable properties</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning-preprocessing-skipped">Data cleaning/Preprocessing (skipped)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dimenssional-basic-time-series-plot">1-dimenssional basic time series plot</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dimenssional-basic-plot">2-dimenssional basic plot</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qc-plotting-optional">qc-plotting (optional)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-choose-variables-to-plot-from-a-dropdown-menu">bonus: choose variables to plot from a dropdown menu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ARM Development Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

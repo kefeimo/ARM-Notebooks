@@ -1,0 +1,2649 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>SASHENIRAOD.C1 Plots &#8212; ARM Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'VAPs/datastream_quicklook/AOD/sasheniraod.c1';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="SASHEVISAOD.C1 Plots" href="sashevisaod.c1.html" />
+    <link rel="prev" title="SASHENIRAOD.C1 Notebook" href="AOD_tutorial.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/arm_logo.png" class="logo__image only-light" alt="ARM Tutorials - Home"/>
+    <script>document.write(`<img src="../../../_static/arm_logo.png" class="logo__image only-dark" alt="ARM Tutorials - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../README.html">
+                    ARM-Notebooks
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started.html">Accessing the Compute Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to Contribute</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Templates/notebook-template.html">ARM Notebook Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Templates/tutorial-schedule.html">Tutorial Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Value-added Products</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../README.html">Value Added Products</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../squire/intro-to-squire.html">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../datastream.html">Data Stream Quick Looks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="AOD_tutorial.html">SASHENIRAOD.C1 Notebook</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">SASHENIRAOD.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sashevisaod.c1.html">SASHEVISAOD.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../AOP/AOP_tutorial.html">AOPCLAP1FLYNN1M.C1 Notebook</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../AOP/aopclap1flynn1m.c1.html">AOPCLAP1FLYNN1M.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../AOP/aoppsap1flynn1h.c1.html">AOPPSAP1FLYNN1H.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../AOP/aoppsap1flynn1m.c1.html">AOPPSAP1FLYNN1M.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BEFLUX/BEFLUX_tutorial.html">BEFLUX1LONG.C1 Notebook</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../BEFLUX/beflux1long.c1.html">BEFLUX1LONG.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BEFLUX/qcflux1long.c1.html">QCFLUX1LONG.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RADFLUXANAL/RADFLUXANAL_tutorial.html">RADFLUX1LONG.C1 Notebook</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../RADFLUXANAL/radflux1long.c1.html">RADFLUX1LONG.C1 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RADFLUXANAL/radflux1long.c2.html">RADFLUX1LONG.C2 Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RADFLUXANAL/radfluxbrs1long.c2.html">RADFLUXBRS1LONG.C2 Plots</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/README.html">Open Science Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/python_basics_tutorial/python-basics.html">Python Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/pandas_xarray_tutorial/Pandas_Xarray_intro.html">Starting with Scientific Libraries in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-basics.html">Py-ART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/ACT_tutorial/ACT_Tutorial_TRACER.html">ACT Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/PySP2_tutorial/PySP2_tutorial.html">PySP2</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/arm-asr-pi-meeting-2023/EMC2_tutorial/EMC2_ARM_ASR_2023_Tutorial.html">Apply EMC² to an E3SM Hindcast Output</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science Workshop</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/presentations/view-abstracts.html">Workshop Abstracts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/day1-overview.html">Day 1 - Introductions!</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/jupyter-intro.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray.html">Working with Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/github-intro.html">An Introduction to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/forking_cloning.html">Forking a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/branching-forking-github-ui.html">Branching and Pull Requests on the Github Website</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/day2-overview.html">Day 2 - Data + Packages</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ARM-Data-Access.html">Accessing ARM Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_diurnalcycle.html">ESMAC: Generate diurnal cycle of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_bar_composition.html">ESMAC: Generate bar plot for aerosol composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_hist.html">ESMAC: Generate a 1-D Historgram Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.html">Using EMC² to Process E3SM Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/day3-overview.html">Day 3 - MetPy and ACT</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/MetPy%2002%20-%20Making%20a%20SkewT.html">MetPy Tutorial - Making a Skew-T!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/act-basics.html">ACT Basics</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/day4-overview.html">Day 3 - Py-ART and Pangeo</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/pyart-basics.html">PyART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/pyart-corrections.html">Py-ART Corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/xarray.html">Introduction to Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Open-Science-Workshop-2022/tutorials/xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/datastream_quicklook/AOD/sasheniraod.c1.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/VAPs/datastream_quicklook/AOD/sasheniraod.c1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>SASHENIRAOD.C1 Plots</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-site-facility-and-date-range">Define site, facility, and date range</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-site-facility-and-date-range-date-format-yyyy-mm-dd-using-the-variables-below">Define site, facility, and date range (date format: YYYY-MM-DD) using the variables below:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data-files">Load data files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-time-series-data">Plot time series data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-list-of-variables-to-be-plotted">Define the list of variables to be plotted:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-check-plots">Quality check plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-variable-for-qc-plot">Define variable for QC plot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#field-selection-dropdown-menu">Field selection dropdown menu</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="sasheniraod-c1-plots">
+<h1>SASHENIRAOD.C1 Plots<a class="headerlink" href="#sasheniraod-c1-plots" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.arm.gov/capabilities/vaps/aod">Click here</a> for more information about this vap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">import</span> <span class="nn">act</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="c1"># Data archive directory</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;/data/archive/&#39;</span>
+
+<span class="c1"># Datastream info</span>
+<span class="n">DATASTREAM_NAME</span> <span class="o">=</span> <span class="s1">&#39;sasheniraod&#39;</span>
+<span class="n">DATA_LEVEL</span> <span class="o">=</span> <span class="s1">&#39;c1&#39;</span>
+<span class="n">LOCATIONS</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;end_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2022-10-01&#39;</span><span class="p">,</span> <span class="s1">&#39;facility&#39;</span><span class="p">:</span> <span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;site&#39;</span><span class="p">:</span> <span class="s1">&#39;hou&#39;</span><span class="p">,</span> <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2021-09-21&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;end_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2015-12-01&#39;</span><span class="p">,</span> <span class="s1">&#39;facility&#39;</span><span class="p">:</span> <span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;site&#39;</span><span class="p">:</span> <span class="s1">&#39;mao&#39;</span><span class="p">,</span> <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2014-01-01&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;end_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2013-06-21&#39;</span><span class="p">,</span> <span class="s1">&#39;facility&#39;</span><span class="p">:</span> <span class="s1">&#39;M1&#39;</span><span class="p">,</span> <span class="s1">&#39;site&#39;</span><span class="p">:</span> <span class="s1">&#39;pvc&#39;</span><span class="p">,</span> <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2012-06-27&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;end_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2019-07-27&#39;</span><span class="p">,</span> <span class="s1">&#39;facility&#39;</span><span class="p">:</span> <span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;site&#39;</span><span class="p">:</span> <span class="s1">&#39;sgp&#39;</span><span class="p">,</span> <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="s1">&#39;2011-03-22&#39;</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="define-site-facility-and-date-range">
+<h2>Define site, facility, and date range<a class="headerlink" href="#define-site-facility-and-date-range" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The following locations and date ranges are available for this VAP:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">LOCATIONS</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;site&#39;</span><span class="p">,</span> <span class="s1">&#39;facility&#39;</span><span class="p">,</span> <span class="s1">&#39;start_date&#39;</span><span class="p">,</span> <span class="s1">&#39;end_date&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following locations and date ranges are available for this VAP:
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>site</th>
+      <th>facility</th>
+      <th>start_date</th>
+      <th>end_date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>hou</td>
+      <td>M1</td>
+      <td>2021-09-21</td>
+      <td>2022-10-01</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>mao</td>
+      <td>M1</td>
+      <td>2014-01-01</td>
+      <td>2015-12-01</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>pvc</td>
+      <td>M1</td>
+      <td>2012-06-27</td>
+      <td>2013-06-21</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>sgp</td>
+      <td>C1</td>
+      <td>2011-03-22</td>
+      <td>2019-07-27</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<section id="define-site-facility-and-date-range-date-format-yyyy-mm-dd-using-the-variables-below">
+<h3>Define site, facility, and date range (date format: YYYY-MM-DD) using the variables below:<a class="headerlink" href="#define-site-facility-and-date-range-date-format-yyyy-mm-dd-using-the-variables-below" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">site_facility</span> <span class="o">=</span> <span class="p">(</span> <span class="s1">&#39;sgp&#39;</span><span class="p">,</span> <span class="s1">&#39;C1&#39;</span> <span class="p">)</span>
+
+<span class="n">date_start</span> <span class="o">=</span> <span class="s1">&#39;2019-07-26&#39;</span>
+<span class="n">date_end</span> <span class="o">=</span> <span class="s1">&#39;2019-07-26&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="load-data-files">
+<h2>Load data files<a class="headerlink" href="#load-data-files" title="Permalink to this heading">#</a></h2>
+<p>Load data files from /data/archive/</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compile list of files</span>
+<span class="n">site</span><span class="p">,</span> <span class="n">facility</span> <span class="o">=</span> <span class="n">site_facility</span>
+<span class="n">d_date_start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_start</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">d_date_end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_end</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">dir_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">+</span> <span class="n">site</span><span class="p">,</span> <span class="n">site</span> <span class="o">+</span> <span class="n">DATASTREAM_NAME</span> <span class="o">+</span> <span class="n">facility</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">DATA_LEVEL</span> <span class="p">)</span>
+<span class="n">dir_path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/data/archive/sgp/sgpsasheniraodC1.c1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">get_ARM_formated_dates</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get a list of ARM conventional formated date lists, based on start_date and end_date(inclusive)</span>
+<span class="sd">    EXAMPLE:</span>
+<span class="sd">    get_ARM_formated_dates(start_date=&quot;20180219&quot;, end_date=&quot;20180221&quot;)</span>
+<span class="sd">    &gt;&gt; [&quot;20180219&quot;, &quot;20180220&quot;, &quot;20180221&quot;] </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">_start_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span>
+    <span class="n">_end_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">end_date</span><span class="p">)</span>
+    
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">_end_date</span> <span class="o">-</span> <span class="n">_start_date</span>   <span class="c1"># returns timedelta    </span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">delta</span><span class="o">.</span><span class="n">days</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">day</span> <span class="o">=</span> <span class="n">_start_date</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">day_formated</span> <span class="o">=</span> <span class="n">day</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">dates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">day_formated</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dates</span>
+
+
+<span class="n">get_ARM_formated_dates</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">date_start</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="n">date_end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;20190726&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter a list of files based on date pattern</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">get_ARM_formated_dates</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">date_start</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="n">date_end</span><span class="p">)</span>
+<span class="n">files_filter</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">:</span>
+    <span class="n">files_filter</span> <span class="o">+=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dir_path</span><span class="si">}</span><span class="s1">/*.</span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s1">*.*&#39;</span><span class="p">)</span>
+    <span class="n">files_filter</span>
+<span class="n">files_filter</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/data/archive/sgp/sgpsasheniraodC1.c1/sgpsasheniraodC1.c1.20190726.113227.nc&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load files as a single dataset</span>
+<span class="n">files_list</span> <span class="o">=</span> <span class="n">files_filter</span> 
+<span class="n">ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">armfiles</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">files_list</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">clean</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">files_list</span><span class="p">)</span><span class="si">}</span><span class="s1"> files loaded&#39;</span><span class="p">)</span>
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 files loaded
+</pre></div>
+</div>
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body[data-theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:                             (time: 1398, wavelength: 256,
+                                         Io_time: 57)
+Coordinates:
+  * time                                (time) datetime64[ns] 2019-07-26T11:3...
+  * wavelength                          (wavelength) float32 900.7 ... 1.823e+03
+  * Io_time                             (Io_time) object 2019-06-22 00:00:00 ...
+Data variables: (12/29)
+    base_time                           datetime64[ns] 2019-07-26T06:00:00
+    time_offset                         (time) datetime64[ns] 2019-07-26T11:3...
+    Io_values                           (Io_time, wavelength) float32 dask.array&lt;chunksize=(57, 256), meta=np.ndarray&gt;
+    Io_values_std                       (Io_time, wavelength) float32 dask.array&lt;chunksize=(57, 256), meta=np.ndarray&gt;
+    smoothed_Io_values                  (wavelength) float32 dask.array&lt;chunksize=(256,), meta=np.ndarray&gt;
+    qc_smoothed_Io_values               (wavelength) int32 dask.array&lt;chunksize=(256,), meta=np.ndarray&gt;
+    ...                                  ...
+    normalized_atmospheric_variability  (time) float32 dask.array&lt;chunksize=(1398,), meta=np.ndarray&gt;
+    aerosol_optical_depth               (time, wavelength) float32 dask.array&lt;chunksize=(1398, 256), meta=np.ndarray&gt;
+    qc_aerosol_optical_depth            (time, wavelength) int32 dask.array&lt;chunksize=(1398, 256), meta=np.ndarray&gt;
+    lat                                 float32 ...
+    lon                                 float32 ...
+    alt                                 float32 ...
+Attributes: (12/16)
+    command_line:          sashe_aod -s sgp -f C1 -b 20190726 -R
+    Conventions:           ARM-1.1
+    process_version:       vap-sashe_aod-1.3-0.el6
+    dod_version:           sasheniraod-c1-1.2
+    input_datastreams:     sgpsashenirhisunC1.a0 : 1.4 : 20190726.000005-2019...
+    site_id:               sgp
+    ...                    ...
+    datastream:            sgpsasheniraodC1.c1
+    history:               created by user dsmgr on machine ruby at 2019-08-3...
+    _file_dates:           [&#x27;20190726&#x27;]
+    _file_times:           [&#x27;113227&#x27;]
+    _datastream:           sgpsasheniraodC1.c1
+    _arm_standards_flag:   1</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-aa48a9fc-be47-4eac-89c2-d4e1b37b5dbf' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-aa48a9fc-be47-4eac-89c2-d4e1b37b5dbf' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 1398</li><li><span class='xr-has-index'>wavelength</span>: 256</li><li><span class='xr-has-index'>Io_time</span>: 57</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-9933f88e-d8d1-45f4-bc47-a23e2066ec17' class='xr-section-summary-in' type='checkbox'  checked><label for='section-9933f88e-d8d1-45f4-bc47-a23e2066ec17' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2019-07-26T11:32:27 ... 2019-07-...</div><input id='attrs-bc3fef53-0083-4184-81d3-62ffe7673e1a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bc3fef53-0083-4184-81d3-62ffe7673e1a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0f6a6047-b8e5-4f64-b014-1cc2059d21cb' class='xr-var-data-in' type='checkbox'><label for='data-0f6a6047-b8e5-4f64-b014-1cc2059d21cb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time offset from start of solar day</dd><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2019-07-26T11:32:27.000000000&#x27;, &#x27;2019-07-26T11:33:00.000000000&#x27;,
+       &#x27;2019-07-26T11:33:33.000000000&#x27;, ..., &#x27;2019-07-27T01:39:50.000000000&#x27;,
+       &#x27;2019-07-27T01:40:23.000000000&#x27;, &#x27;2019-07-27T01:40:55.000000000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>wavelength</span></div><div class='xr-var-dims'>(wavelength)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>900.7 904.7 ... 1.819e+03 1.823e+03</div><input id='attrs-22fc11d0-022c-4f30-b5ab-a1b9ecb974e7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-22fc11d0-022c-4f30-b5ab-a1b9ecb974e7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-193553c4-7fee-4548-bda1-1c1aacb666f7' class='xr-var-data-in' type='checkbox'><label for='data-193553c4-7fee-4548-bda1-1c1aacb666f7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Wavelength</dd><dt><span>units :</span></dt><dd>nm</dd></dl></div><div class='xr-var-data'><pre>array([ 900.7061 ,  904.6626 ,  908.61475, ..., 1815.8138 , 1819.2904 ,
+       1822.7675 ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>Io_time</span></div><div class='xr-var-dims'>(Io_time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>2019-06-22 00:00:00 ... 2019-08-...</div><input id='attrs-736b87f7-3223-476b-b1cc-86ab4217fada' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-736b87f7-3223-476b-b1cc-86ab4217fada' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7d1cabdc-10bb-4743-adb1-d69b31303a0e' class='xr-var-data-in' type='checkbox'><label for='data-7d1cabdc-10bb-4743-adb1-d69b31303a0e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time offset from first Io value within smoothing window</dd></dl></div><div class='xr-var-data'><pre>array([cftime.DatetimeGregorian(2019, 6, 22, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 6, 24, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 6, 25, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 6, 26, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 6, 27, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 6, 28, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 6, 28, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 6, 29, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 6, 29, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 6, 30, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 6, 30, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 1, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 1, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 2, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 2, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 3, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 8, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 8, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 9, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 10, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 11, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 11, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 12, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 12, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 13, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 13, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 15, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 16, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 16, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 18, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 18, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 19, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 20, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 22, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 23, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 23, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 24, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 24, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 25, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 25, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 26, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 27, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 28, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 29, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 30, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 30, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 31, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 7, 31, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 8, 1, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 8, 5, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 8, 6, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 8, 8, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 8, 11, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 8, 12, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 8, 27, 0, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 8, 28, 12, 0, 0, 0, has_year_zero=False),
+       cftime.DatetimeGregorian(2019, 8, 29, 0, 0, 0, 0, has_year_zero=False)],
+      dtype=object)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6dca3316-4e64-475d-a05c-e69938aab28c' class='xr-section-summary-in' type='checkbox'  ><label for='section-6dca3316-4e64-475d-a05c-e69938aab28c' class='xr-section-summary' >Data variables: <span>(29)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>base_time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2019-07-26T06:00:00</div><input id='attrs-14950031-dd45-4e0c-946c-f91a7b8b02f9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-14950031-dd45-4e0c-946c-f91a7b8b02f9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f97d8c45-68e6-4991-8901-69924aecc405' class='xr-var-data-in' type='checkbox'><label for='data-f97d8c45-68e6-4991-8901-69924aecc405' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>string :</span></dt><dd>2019-07-26 06:00:00 0:00</dd><dt><span>long_name :</span></dt><dd>Base time in Epoch</dd><dt><span>ancillary_variables :</span></dt><dd>time_offset</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2019-07-26T06:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time_offset</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2019-07-26T11:32:27 ... 2019-07-...</div><input id='attrs-87420720-3670-4cb2-9787-1f7561875380' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-87420720-3670-4cb2-9787-1f7561875380' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-94229e6f-6742-4f16-a76a-3e857984196d' class='xr-var-data-in' type='checkbox'><label for='data-94229e6f-6742-4f16-a76a-3e857984196d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time offset from base_time</dd><dt><span>ancillary_variables :</span></dt><dd>base_time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2019-07-26T11:32:27.000000000&#x27;, &#x27;2019-07-26T11:33:00.000000000&#x27;,
+       &#x27;2019-07-26T11:33:33.000000000&#x27;, ...,
+       &#x27;2019-07-27T01:39:50.000000000&#x27;, &#x27;2019-07-27T01:40:23.000000000&#x27;,
+       &#x27;2019-07-27T01:40:55.000000000&#x27;], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Io_values</span></div><div class='xr-var-dims'>(Io_time, wavelength)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(57, 256), meta=np.ndarray&gt;</div><input id='attrs-b4af2531-c325-4234-ac6e-2778c81a7aab' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b4af2531-c325-4234-ac6e-2778c81a7aab' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-feac099b-a94a-4586-ac30-b0813af9be74' class='xr-var-data-in' type='checkbox'><label for='data-feac099b-a94a-4586-ac30-b0813af9be74' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Io values from langley regression</dd><dt><span>units :</span></dt><dd>count</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 57.00 kiB </td>
+                        <td> 57.00 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (57, 256) </td>
+                        <td> (57, 256) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="92" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="42" x2="120" y2="42" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="42" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="42" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,42.45091131626285 0.0,42.45091131626285" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="62.450911" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="140.000000" y="21.225456" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,21.225456)">57</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Io_values_std</span></div><div class='xr-var-dims'>(Io_time, wavelength)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(57, 256), meta=np.ndarray&gt;</div><input id='attrs-ce3d169d-54e0-4b45-9ef9-484b425e58fb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ce3d169d-54e0-4b45-9ef9-484b425e58fb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8fd891e7-c4d6-4eb4-9cef-24b43ba41a9a' class='xr-var-data-in' type='checkbox'><label for='data-8fd891e7-c4d6-4eb4-9cef-24b43ba41a9a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Standard deviations of Io values from langley regression</dd><dt><span>units :</span></dt><dd>count</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 57.00 kiB </td>
+                        <td> 57.00 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (57, 256) </td>
+                        <td> (57, 256) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="92" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="42" x2="120" y2="42" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="42" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="42" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,42.45091131626285 0.0,42.45091131626285" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="62.450911" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="140.000000" y="21.225456" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,21.225456)">57</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>smoothed_Io_values</span></div><div class='xr-var-dims'>(wavelength)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(256,), meta=np.ndarray&gt;</div><input id='attrs-c9a8c86a-b13e-41cb-b0de-d15dc424ee57' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c9a8c86a-b13e-41cb-b0de-d15dc424ee57' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-857e2239-f241-4d51-8158-cbbac7855e36' class='xr-var-data-in' type='checkbox'><label for='data-857e2239-f241-4d51-8158-cbbac7855e36' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Smoothed Io values used to compute transmittance</dd><dt><span>units :</span></dt><dd>count</dd><dt><span>ancillary_variables :</span></dt><dd>qc_smoothed_Io_values</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.00 kiB </td>
+                        <td> 1.00 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (256,) </td>
+                        <td> (256,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qc_smoothed_Io_values</span></div><div class='xr-var-dims'>(wavelength)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(256,), meta=np.ndarray&gt;</div><input id='attrs-7f821c48-1f18-4ad9-85f6-aac9138aa21e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7f821c48-1f18-4ad9-85f6-aac9138aa21e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-270d9093-8fbb-4fa4-99a9-d740601f77be' class='xr-var-data-in' type='checkbox'><label for='data-270d9093-8fbb-4fa4-99a9-d740601f77be' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Quality check results on field: Smoothed Io values used to compute transmittance</dd><dt><span>units :</span></dt><dd>1</dd><dt><span>flag_masks :</span></dt><dd>[1, 2, 4, 8, 16, 32, 64, 128, 256]</dd><dt><span>flag_meanings :</span></dt><dd>[&#x27;Potential stray light effects.&#x27;, &#x27;Stray light severely affecting calibration.&#x27;, &#x27;Uncorrected ozone features.&#x27;, &#x27;Nonlinear ozone features severely affecting calibration.&#x27;, &#x27;Uncorrected water vapor features.&#x27;, &#x27;Nonlinear water vapor features severely affecting calibration.&#x27;, &#x27;Nonlinear oxygen features severely affecting calibration.&#x27;, &#x27;Uncorrected CO2 features.&#x27;, &#x27;Uncorrected CH4 features.&#x27;]</dd><dt><span>flag_assessments :</span></dt><dd>[&#x27;Indeterminate&#x27;, &#x27;Bad&#x27;, &#x27;Indeterminate&#x27;, &#x27;Bad&#x27;, &#x27;Indeterminate&#x27;, &#x27;Bad&#x27;, &#x27;Bad&#x27;, &#x27;Indeterminate&#x27;, &#x27;Indeterminate&#x27;]</dd><dt><span>standard_name :</span></dt><dd>quality_flag</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.00 kiB </td>
+                        <td> 1.00 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (256,) </td>
+                        <td> (256,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> int32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_zenith_angle</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398,), meta=np.ndarray&gt;</div><input id='attrs-42b83fa4-4111-4849-a9ab-0f7f320ec81a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-42b83fa4-4111-4849-a9ab-0f7f320ec81a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-799cbdf5-ad5f-448c-8cc9-30e465462d85' class='xr-var-data-in' type='checkbox'><label for='data-799cbdf5-ad5f-448c-8cc9-30e465462d85' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Apparent solar zenith angle</dd><dt><span>units :</span></dt><dd>degree</dd><dt><span>comment :</span></dt><dd>Apparent SZA from solar ephemeris with correction for refraction</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 5.46 kiB </td>
+                        <td> 5.46 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398,) </td>
+                        <td> (1398,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >1398</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>cosine_solar_zenith_angle</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398,), meta=np.ndarray&gt;</div><input id='attrs-2d60fcfd-00ce-490b-9f0b-50a82263720f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2d60fcfd-00ce-490b-9f0b-50a82263720f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-955242a8-ccc5-44ba-9409-8322075e5d44' class='xr-var-data-in' type='checkbox'><label for='data-955242a8-ccc5-44ba-9409-8322075e5d44' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Cosine of apparent solar zenith angle</dd><dt><span>units :</span></dt><dd>unitless</dd><dt><span>comment :</span></dt><dd>Cosine of apparent SZA from solar ephemeris with correction for refraction</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 5.46 kiB </td>
+                        <td> 5.46 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398,) </td>
+                        <td> (1398,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >1398</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>cosine_correction</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398,), meta=np.ndarray&gt;</div><input id='attrs-ddcf5d17-55e2-4e80-b140-2603ce83df41' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ddcf5d17-55e2-4e80-b140-2603ce83df41' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6471f7c7-3bd6-4a08-9eb5-340f80a87377' class='xr-var-data-in' type='checkbox'><label for='data-6471f7c7-3bd6-4a08-9eb5-340f80a87377' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Cosine correction</dd><dt><span>units :</span></dt><dd>unitless</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 5.46 kiB </td>
+                        <td> 5.46 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398,) </td>
+                        <td> (1398,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >1398</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>diffuse_correction</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e2edef4a-170b-4ebb-976f-f2031a22cdd9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e2edef4a-170b-4ebb-976f-f2031a22cdd9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-edc61937-62e6-464b-8ab7-57e5c4d19705' class='xr-var-data-in' type='checkbox'><label for='data-edc61937-62e6-464b-8ab7-57e5c4d19705' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Diffuse correction</dd><dt><span>units :</span></dt><dd>unitless</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>airmass</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398,), meta=np.ndarray&gt;</div><input id='attrs-b4e37bcf-acea-4a9e-968d-9cc9bfd1ca3f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b4e37bcf-acea-4a9e-968d-9cc9bfd1ca3f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3ea20393-04a1-4251-91c9-327ff53f2b52' class='xr-var-data-in' type='checkbox'><label for='data-3ea20393-04a1-4251-91c9-327ff53f2b52' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Optical path length through Earth&#x27;s atmosphere for light from a celestial source</dd><dt><span>units :</span></dt><dd>unitless</dd><dt><span>equation :</span></dt><dd>airmass = 1.0 / [ cos(sza) + 0.50572 * (96.07995 - sza)^-1.6364 ]</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 5.46 kiB </td>
+                        <td> 5.46 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398,) </td>
+                        <td> (1398,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >1398</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>earth_sun_distance</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398,), meta=np.ndarray&gt;</div><input id='attrs-a0495f32-d5de-4fcc-afde-69a9097968a4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a0495f32-d5de-4fcc-afde-69a9097968a4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-15c77819-964e-4c5a-a7a9-23ec1abc53f2' class='xr-var-data-in' type='checkbox'><label for='data-15c77819-964e-4c5a-a7a9-23ec1abc53f2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Earth sun distance</dd><dt><span>units :</span></dt><dd>astronomical_unit</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 5.46 kiB </td>
+                        <td> 5.46 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398,) </td>
+                        <td> (1398,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >1398</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>atmos_pressure</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398,), meta=np.ndarray&gt;</div><input id='attrs-70286b84-c5f3-4779-94a8-2e3fe68115d8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-70286b84-c5f3-4779-94a8-2e3fe68115d8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-42f571ee-7606-4d7f-90cc-c18058cc7f58' class='xr-var-data-in' type='checkbox'><label for='data-42f571ee-7606-4d7f-90cc-c18058cc7f58' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Atmospheric pressure</dd><dt><span>units :</span></dt><dd>kPa</dd><dt><span>ancillary_variables :</span></dt><dd>qc_atmos_pressure</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 5.46 kiB </td>
+                        <td> 5.46 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398,) </td>
+                        <td> (1398,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >1398</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qc_atmos_pressure</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398,), meta=np.ndarray&gt;</div><input id='attrs-f7df8e6f-821c-4edb-b2df-c9b3e529b705' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f7df8e6f-821c-4edb-b2df-c9b3e529b705' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-49f3797a-6662-47e2-b4bc-57e1e2a86508' class='xr-var-data-in' type='checkbox'><label for='data-49f3797a-6662-47e2-b4bc-57e1e2a86508' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Quality check results on field: Atmospheric pressure</dd><dt><span>units :</span></dt><dd>1</dd><dt><span>flag_masks :</span></dt><dd>[1, 2, 4]</dd><dt><span>flag_meanings :</span></dt><dd>[&#x27;Value is equal to missing_value.&#x27;, &#x27;Value is less than the fail_min.&#x27;, &#x27;Value is greater than the fail_max.&#x27;]</dd><dt><span>flag_assessments :</span></dt><dd>[&#x27;Bad&#x27;, &#x27;Bad&#x27;, &#x27;Bad&#x27;]</dd><dt><span>fail_min :</span></dt><dd>85.0</dd><dt><span>fail_max :</span></dt><dd>104.0</dd><dt><span>standard_name :</span></dt><dd>quality_flag</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 5.46 kiB </td>
+                        <td> 5.46 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398,) </td>
+                        <td> (1398,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> int32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >1398</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>rayleigh_optical_depth</span></div><div class='xr-var-dims'>(wavelength)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(256,), meta=np.ndarray&gt;</div><input id='attrs-ae6fbc35-ce0c-4940-af90-9f7f5e60f76f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ae6fbc35-ce0c-4940-af90-9f7f5e60f76f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c2bbb836-26f2-4c53-8bec-eaf6318ac4d2' class='xr-var-data-in' type='checkbox'><label for='data-c2bbb836-26f2-4c53-8bec-eaf6318ac4d2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Rayleigh optical depth for a standard atmosphere</dd><dt><span>units :</span></dt><dd>unitless</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.00 kiB </td>
+                        <td> 1.00 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (256,) </td>
+                        <td> (256,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ozone_columnar_density</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5e92c8ca-96c5-44f9-aa40-f7690fa6ed90' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5e92c8ca-96c5-44f9-aa40-f7690fa6ed90' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d83936f9-8a57-4e6d-a111-118f56a084fb' class='xr-var-data-in' type='checkbox'><label for='data-d83936f9-8a57-4e6d-a111-118f56a084fb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Ozone columnar density</dd><dt><span>units :</span></dt><dd>DU</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ozone_absorption_coefficient</span></div><div class='xr-var-dims'>(wavelength)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(256,), meta=np.ndarray&gt;</div><input id='attrs-0dd9895c-7eb4-489b-9b88-c51ec6136399' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0dd9895c-7eb4-489b-9b88-c51ec6136399' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c5e37f10-f1ae-43da-be7b-a6dc54a00f59' class='xr-var-data-in' type='checkbox'><label for='data-c5e37f10-f1ae-43da-be7b-a6dc54a00f59' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Ozone absorption coefficients</dd><dt><span>units :</span></dt><dd>1/cm</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.00 kiB </td>
+                        <td> 1.00 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (256,) </td>
+                        <td> (256,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>ozone_optical_depth</span></div><div class='xr-var-dims'>(wavelength)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(256,), meta=np.ndarray&gt;</div><input id='attrs-9825c882-41ed-42b0-b5fd-d4617550e8fc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9825c882-41ed-42b0-b5fd-d4617550e8fc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4d17e51d-472d-4ed9-b347-efa03b83c162' class='xr-var-data-in' type='checkbox'><label for='data-4d17e51d-472d-4ed9-b347-efa03b83c162' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Ozone optical depth</dd><dt><span>units :</span></dt><dd>unitless</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.00 kiB </td>
+                        <td> 1.00 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (256,) </td>
+                        <td> (256,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>solar_spectrum</span></div><div class='xr-var-dims'>(wavelength)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(256,), meta=np.ndarray&gt;</div><input id='attrs-c3bf321e-61f2-41a0-9367-3d361002918f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c3bf321e-61f2-41a0-9367-3d361002918f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6effb8e3-7297-4043-b5ec-39152f5506cb' class='xr-var-data-in' type='checkbox'><label for='data-6effb8e3-7297-4043-b5ec-39152f5506cb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Extraterrestrial solar irradiance outside the Earth&#x27;s atmosphere</dd><dt><span>units :</span></dt><dd>W/(m^2 nm)</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.00 kiB </td>
+                        <td> 1.00 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (256,) </td>
+                        <td> (256,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>diffuse_transmittance</span></div><div class='xr-var-dims'>(time, wavelength)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398, 256), meta=np.ndarray&gt;</div><input id='attrs-6c83e481-316a-4c10-b303-55ec6d5abb0d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6c83e481-316a-4c10-b303-55ec6d5abb0d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9cd18b81-7d82-4047-b375-10ade21ba3cc' class='xr-var-data-in' type='checkbox'><label for='data-9cd18b81-7d82-4047-b375-10ade21ba3cc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Diffuse transmittance</dd><dt><span>units :</span></dt><dd>unitless</dd><dt><span>ancillary_variables :</span></dt><dd>qc_diffuse_transmittance</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.37 MiB </td>
+                        <td> 1.37 MiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398, 256) </td>
+                        <td> (1398, 256) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="91" height="170" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="41" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="120" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2" />
+  <line x1="41" y1="0" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 41.62885284274682,0.0 41.62885284274682,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="20.814426" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="61.628853" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,61.628853,60.000000)">1398</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qc_diffuse_transmittance</span></div><div class='xr-var-dims'>(time, wavelength)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398, 256), meta=np.ndarray&gt;</div><input id='attrs-60d9c689-45c3-4267-bb40-7efb7f41ce3d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-60d9c689-45c3-4267-bb40-7efb7f41ce3d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e21ebc96-55aa-4af0-9413-f86be98fc8ef' class='xr-var-data-in' type='checkbox'><label for='data-e21ebc96-55aa-4af0-9413-f86be98fc8ef' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Quality check results on field: Diffuse transmittance</dd><dt><span>units :</span></dt><dd>1</dd><dt><span>flag_masks :</span></dt><dd>[1, 2, 4, 8]</dd><dt><span>flag_meanings :</span></dt><dd>[&#x27;Value is equal to missing_value.&#x27;, &#x27;Value is less than the fail_min.&#x27;, &#x27;Value is greater than the fail_max.&#x27;, &#x27;solar_zenith_angle &gt; 84&#x27;]</dd><dt><span>flag_assessments :</span></dt><dd>[&#x27;Bad&#x27;, &#x27;Bad&#x27;, &#x27;Bad&#x27;, &#x27;Indeterminate&#x27;]</dd><dt><span>fail_min :</span></dt><dd>0.0</dd><dt><span>fail_max :</span></dt><dd>1.0</dd><dt><span>standard_name :</span></dt><dd>quality_flag</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.37 MiB </td>
+                        <td> 1.37 MiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398, 256) </td>
+                        <td> (1398, 256) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> int32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="91" height="170" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="41" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="120" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2" />
+  <line x1="41" y1="0" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 41.62885284274682,0.0 41.62885284274682,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="20.814426" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="61.628853" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,61.628853,60.000000)">1398</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>direct_normal_transmittance</span></div><div class='xr-var-dims'>(time, wavelength)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398, 256), meta=np.ndarray&gt;</div><input id='attrs-7ce83705-d2d0-4099-833c-7d02e870afa9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7ce83705-d2d0-4099-833c-7d02e870afa9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d1ee92ee-fe4e-4635-b8e7-d4259e2c7b4d' class='xr-var-data-in' type='checkbox'><label for='data-d1ee92ee-fe4e-4635-b8e7-d4259e2c7b4d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Direct normal transmittance</dd><dt><span>units :</span></dt><dd>unitless</dd><dt><span>ancillary_variables :</span></dt><dd>qc_direct_normal_transmittance</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.37 MiB </td>
+                        <td> 1.37 MiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398, 256) </td>
+                        <td> (1398, 256) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="91" height="170" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="41" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="120" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2" />
+  <line x1="41" y1="0" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 41.62885284274682,0.0 41.62885284274682,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="20.814426" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="61.628853" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,61.628853,60.000000)">1398</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qc_direct_normal_transmittance</span></div><div class='xr-var-dims'>(time, wavelength)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398, 256), meta=np.ndarray&gt;</div><input id='attrs-f2c679a8-2597-4dd6-ab2d-6e9351cd37fb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f2c679a8-2597-4dd6-ab2d-6e9351cd37fb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ca6104c7-fa61-477b-809d-b7ab7058b18f' class='xr-var-data-in' type='checkbox'><label for='data-ca6104c7-fa61-477b-809d-b7ab7058b18f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Quality check results on field: Direct normal transmittance</dd><dt><span>units :</span></dt><dd>1</dd><dt><span>flag_masks :</span></dt><dd>[1, 2, 4, 8]</dd><dt><span>flag_meanings :</span></dt><dd>[&#x27;Value is equal to missing_value.&#x27;, &#x27;Value is less than the fail_min.&#x27;, &#x27;Value is greater than the fail_max.&#x27;, &#x27;solar_zenith_angle &gt; 84&#x27;]</dd><dt><span>flag_assessments :</span></dt><dd>[&#x27;Bad&#x27;, &#x27;Bad&#x27;, &#x27;Bad&#x27;, &#x27;Indeterminate&#x27;]</dd><dt><span>fail_min :</span></dt><dd>0.0</dd><dt><span>fail_max :</span></dt><dd>1.0</dd><dt><span>standard_name :</span></dt><dd>quality_flag</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.37 MiB </td>
+                        <td> 1.37 MiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398, 256) </td>
+                        <td> (1398, 256) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> int32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="91" height="170" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="41" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="120" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2" />
+  <line x1="41" y1="0" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 41.62885284274682,0.0 41.62885284274682,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="20.814426" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="61.628853" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,61.628853,60.000000)">1398</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>normalized_atmospheric_variability</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398,), meta=np.ndarray&gt;</div><input id='attrs-a001e0d7-dc42-42c0-8888-e44d7af96b58' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a001e0d7-dc42-42c0-8888-e44d7af96b58' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d5456b55-03b2-4d74-9039-dd1d3bd39ce3' class='xr-var-data-in' type='checkbox'><label for='data-d5456b55-03b2-4d74-9039-dd1d3bd39ce3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Normalized variability of optical depth for cloud screening</dd><dt><span>units :</span></dt><dd>unitless</dd><dt><span>valid_min :</span></dt><dd>0.0</dd><dt><span>valid_max :</span></dt><dd>1.0</dd><dt><span>comment :</span></dt><dd>Normalized from zero to one with zero as no variability and one as highly variable.  Cloud-free typically around 1e-4.</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 5.46 kiB </td>
+                        <td> 5.46 kiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398,) </td>
+                        <td> (1398,) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="170" height="75" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="120" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="25" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="25" style="stroke-width:2" />
+  <line x1="120" y1="0" x2="120" y2="25" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="60.000000" y="45.412617" font-size="1.0rem" font-weight="100" text-anchor="middle" >1398</text>
+  <text x="140.000000" y="12.706308" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)">1</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>aerosol_optical_depth</span></div><div class='xr-var-dims'>(time, wavelength)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398, 256), meta=np.ndarray&gt;</div><input id='attrs-7ea3bbe9-8e67-480c-979e-53bd33a3c70b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7ea3bbe9-8e67-480c-979e-53bd33a3c70b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-02de62c5-a9ae-4efb-868c-c57290a3160c' class='xr-var-data-in' type='checkbox'><label for='data-02de62c5-a9ae-4efb-868c-c57290a3160c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Aerosol optical depth</dd><dt><span>units :</span></dt><dd>unitless</dd><dt><span>standard_name :</span></dt><dd>atmosphere_optical_thickness_due_to_ambient_aerosol</dd><dt><span>ancillary_variables :</span></dt><dd>qc_aerosol_optical_depth</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.37 MiB </td>
+                        <td> 1.37 MiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398, 256) </td>
+                        <td> (1398, 256) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> float32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="91" height="170" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="41" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="120" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2" />
+  <line x1="41" y1="0" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 41.62885284274682,0.0 41.62885284274682,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="20.814426" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="61.628853" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,61.628853,60.000000)">1398</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>qc_aerosol_optical_depth</span></div><div class='xr-var-dims'>(time, wavelength)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(1398, 256), meta=np.ndarray&gt;</div><input id='attrs-68fc9add-61fe-48b0-a111-6d7cb0bc9b7c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-68fc9add-61fe-48b0-a111-6d7cb0bc9b7c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-447df1ac-1b32-4ebf-ae69-18ad5501d035' class='xr-var-data-in' type='checkbox'><label for='data-447df1ac-1b32-4ebf-ae69-18ad5501d035' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Quality check results on field: Aerosol optical depth</dd><dt><span>units :</span></dt><dd>1</dd><dt><span>flag_masks :</span></dt><dd>[1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]</dd><dt><span>flag_meanings :</span></dt><dd>[&#x27;Value is equal to missing_value.&#x27;, &#x27;Value is less than the fail_min.&#x27;, &#x27;Reserved for fail_max check.&#x27;, &#x27;solar_zenith_angle &gt; 84&#x27;, &#x27;atmos_pressure is out of range.&#x27;, &#x27;direct_normal_transmittance is out of range.&#x27;, &#x27;direct_normal_transmittance at 500nm &lt; 0.01 OR direct_normal_transmittance at 500nm &gt; 1&#x27;, &#x27;Failed initial stage of Alexandrov cloud screen algorithm&#x27;, &#x27;Failed final stage of Alexandrov cloud screen algorithm&#x27;, &#x27;smoothed_Io_values failed one or more qc tests&#x27;, &#x27;smoothed_Io_values flagged as bad by one or more qc tests&#x27;]</dd><dt><span>flag_assessments :</span></dt><dd>[&#x27;Bad&#x27;, &#x27;Bad&#x27;, &#x27;Bad&#x27;, &#x27;Indeterminate&#x27;, &#x27;Bad&#x27;, &#x27;Bad&#x27;, &#x27;Bad&#x27;, &#x27;Indeterminate&#x27;, &#x27;Bad&#x27;, &#x27;Indeterminate&#x27;, &#x27;Bad&#x27;]</dd><dt><span>fail_min :</span></dt><dd>0.0</dd><dt><span>standard_name :</span></dt><dd>quality_flag</dd></dl></div><div class='xr-var-data'><table>
+    <tr>
+        <td>
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <td> </td>
+                        <th> Array </th>
+                        <th> Chunk </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <th> Bytes </th>
+                        <td> 1.37 MiB </td>
+                        <td> 1.37 MiB </td>
+                    </tr>
+                    
+                    <tr>
+                        <th> Shape </th>
+                        <td> (1398, 256) </td>
+                        <td> (1398, 256) </td>
+                    </tr>
+                    <tr>
+                        <th> Dask graph </th>
+                        <td colspan="2"> 1 chunks in 2 graph layers </td>
+                    </tr>
+                    <tr>
+                        <th> Data type </th>
+                        <td colspan="2"> int32 numpy.ndarray </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td>
+        <svg width="91" height="170" style="stroke:rgb(0,0,0);stroke-width:1" >
+
+  <!-- Horizontal lines -->
+  <line x1="0" y1="0" x2="41" y2="0" style="stroke-width:2" />
+  <line x1="0" y1="120" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Vertical lines -->
+  <line x1="0" y1="0" x2="0" y2="120" style="stroke-width:2" />
+  <line x1="41" y1="0" x2="41" y2="120" style="stroke-width:2" />
+
+  <!-- Colored Rectangle -->
+  <polygon points="0.0,0.0 41.62885284274682,0.0 41.62885284274682,120.0 0.0,120.0" style="fill:#ECB172A0;stroke-width:0"/>
+
+  <!-- Text -->
+  <text x="20.814426" y="140.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" >256</text>
+  <text x="61.628853" y="60.000000" font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(-90,61.628853,60.000000)">1398</text>
+</svg>
+        </td>
+    </tr>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6c778203-e4ba-456f-9f66-f89aa9334cb6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6c778203-e4ba-456f-9f66-f89aa9334cb6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-322ca09a-d417-4584-9424-4d4331ba920c' class='xr-var-data-in' type='checkbox'><label for='data-322ca09a-d417-4584-9424-4d4331ba920c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>North latitude</dd><dt><span>units :</span></dt><dd>degree_N</dd><dt><span>valid_min :</span></dt><dd>-90.0</dd><dt><span>valid_max :</span></dt><dd>90.0</dd><dt><span>standard_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-34cce00b-0694-4573-b9ae-0c9e91c567bf' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-34cce00b-0694-4573-b9ae-0c9e91c567bf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f6503411-8d2c-42ab-8edd-2bec26e2af7d' class='xr-var-data-in' type='checkbox'><label for='data-f6503411-8d2c-42ab-8edd-2bec26e2af7d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>East longitude</dd><dt><span>units :</span></dt><dd>degree_E</dd><dt><span>valid_min :</span></dt><dd>-180.0</dd><dt><span>valid_max :</span></dt><dd>180.0</dd><dt><span>standard_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e057b156-3fd4-4cf9-8531-a8b961a05322' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e057b156-3fd4-4cf9-8531-a8b961a05322' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-885e1b73-7cfa-4c12-84d0-07e0ee8e3bcb' class='xr-var-data-in' type='checkbox'><label for='data-885e1b73-7cfa-4c12-84d0-07e0ee8e3bcb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Altitude above mean sea level</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>standard_name :</span></dt><dd>altitude</dd></dl></div><div class='xr-var-data'><pre>[1 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-4c453758-ba05-43f7-b226-972d9b89c761' class='xr-section-summary-in' type='checkbox'  ><label for='section-4c453758-ba05-43f7-b226-972d9b89c761' class='xr-section-summary' >Indexes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-3d31958a-2014-48f2-8e94-b13eedc5fb7f' class='xr-index-data-in' type='checkbox'/><label for='index-3d31958a-2014-48f2-8e94-b13eedc5fb7f' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2019-07-26 11:32:27&#x27;, &#x27;2019-07-26 11:33:00&#x27;,
+               &#x27;2019-07-26 11:33:33&#x27;, &#x27;2019-07-26 11:34:05&#x27;,
+               &#x27;2019-07-26 11:34:38&#x27;, &#x27;2019-07-26 11:35:11&#x27;,
+               &#x27;2019-07-26 11:35:43&#x27;, &#x27;2019-07-26 11:36:16&#x27;,
+               &#x27;2019-07-26 11:36:48&#x27;, &#x27;2019-07-26 11:37:21&#x27;,
+               ...
+               &#x27;2019-07-27 01:36:00&#x27;, &#x27;2019-07-27 01:36:33&#x27;,
+               &#x27;2019-07-27 01:37:06&#x27;, &#x27;2019-07-27 01:37:38&#x27;,
+               &#x27;2019-07-27 01:38:11&#x27;, &#x27;2019-07-27 01:38:44&#x27;,
+               &#x27;2019-07-27 01:39:17&#x27;, &#x27;2019-07-27 01:39:50&#x27;,
+               &#x27;2019-07-27 01:40:23&#x27;, &#x27;2019-07-27 01:40:55&#x27;],
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=1398, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>wavelength</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-a4452ee9-27b0-472a-9720-e569af7bd360' class='xr-index-data-in' type='checkbox'/><label for='index-a4452ee9-27b0-472a-9720-e569af7bd360' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Float64Index([ 900.7061157226562,    904.66259765625,    908.61474609375,
+                912.562744140625,  916.5064697265625,  920.4459838867188,
+               924.3812866210938,  928.3124389648438,  932.2393798828125,
+               936.1622314453125,
+              ...
+              1791.4901123046875, 1794.9637451171875,  1798.437744140625,
+                  1801.912109375, 1805.3868408203125,  1808.862060546875,
+               1812.337646484375, 1815.8138427734375, 1819.2904052734375,
+              1822.7674560546875],
+             dtype=&#x27;float64&#x27;, name=&#x27;wavelength&#x27;, length=256))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>Io_time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-878600b7-e570-4656-8129-4a8eba6286ca' class='xr-index-data-in' type='checkbox'/><label for='index-878600b7-e570-4656-8129-4a8eba6286ca' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(CFTimeIndex([2019-06-22 00:00:00, 2019-06-24 12:00:00, 2019-06-25 00:00:00,
+             2019-06-26 12:00:00, 2019-06-27 00:00:00, 2019-06-28 00:00:00,
+             2019-06-28 12:00:00, 2019-06-29 00:00:00, 2019-06-29 12:00:00,
+             2019-06-30 00:00:00, 2019-06-30 12:00:00, 2019-07-01 00:00:00,
+             2019-07-01 12:00:00, 2019-07-02 00:00:00, 2019-07-02 12:00:00,
+             2019-07-03 00:00:00, 2019-07-08 00:00:00, 2019-07-08 12:00:00,
+             2019-07-09 12:00:00, 2019-07-10 00:00:00, 2019-07-11 00:00:00,
+             2019-07-11 12:00:00, 2019-07-12 00:00:00, 2019-07-12 12:00:00,
+             2019-07-13 00:00:00, 2019-07-13 12:00:00, 2019-07-15 12:00:00,
+             2019-07-16 00:00:00, 2019-07-16 12:00:00, 2019-07-18 00:00:00,
+             2019-07-18 12:00:00, 2019-07-19 12:00:00, 2019-07-20 00:00:00,
+             2019-07-22 12:00:00, 2019-07-23 00:00:00, 2019-07-23 12:00:00,
+             2019-07-24 00:00:00, 2019-07-24 12:00:00, 2019-07-25 00:00:00,
+             2019-07-25 12:00:00, 2019-07-26 12:00:00, 2019-07-27 12:00:00,
+             2019-07-28 12:00:00, 2019-07-29 12:00:00, 2019-07-30 00:00:00,
+             2019-07-30 12:00:00, 2019-07-31 00:00:00, 2019-07-31 12:00:00,
+             2019-08-01 00:00:00, 2019-08-05 00:00:00, 2019-08-06 12:00:00,
+             2019-08-08 00:00:00, 2019-08-11 12:00:00, 2019-08-12 12:00:00,
+             2019-08-27 00:00:00, 2019-08-28 12:00:00, 2019-08-29 00:00:00],
+            dtype=&#x27;object&#x27;, length=57, calendar=&#x27;standard&#x27;, freq=&#x27;None&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-7faa304a-71e3-41a6-9905-79e49ae1d38e' class='xr-section-summary-in' type='checkbox'  ><label for='section-7faa304a-71e3-41a6-9905-79e49ae1d38e' class='xr-section-summary' >Attributes: <span>(16)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>command_line :</span></dt><dd>sashe_aod -s sgp -f C1 -b 20190726 -R</dd><dt><span>Conventions :</span></dt><dd>ARM-1.1</dd><dt><span>process_version :</span></dt><dd>vap-sashe_aod-1.3-0.el6</dd><dt><span>dod_version :</span></dt><dd>sasheniraod-c1-1.2</dd><dt><span>input_datastreams :</span></dt><dd>sgpsashenirhisunC1.a0 : 1.4 : 20190726.000005-20190727.000001
+sgpsashenirlangleyC1.c0 : 1.5 : 20190621.111305-20190828.115903
+gecomiX1.a1 : 9.0 : 20190701.000000
+sgpsashevishisunC1.a0 : 1.4 : 20190726.000005-20190727.000001
+sgpsashevislangleyC1.c0 : 1.5 : 20190621.111305-20190828.115903</dd><dt><span>site_id :</span></dt><dd>sgp</dd><dt><span>platform_id :</span></dt><dd>sasheniraod</dd><dt><span>facility_id :</span></dt><dd>C1</dd><dt><span>data_level :</span></dt><dd>c1</dd><dt><span>location_description :</span></dt><dd>Southern Great Plains (SGP), Lamont, Oklahoma</dd><dt><span>datastream :</span></dt><dd>sgpsasheniraodC1.c1</dd><dt><span>history :</span></dt><dd>created by user dsmgr on machine ruby at 2019-08-30 18:11:10, using vap-sashe_aod-1.3-0.el6</dd><dt><span>_file_dates :</span></dt><dd>[&#x27;20190726&#x27;]</dd><dt><span>_file_times :</span></dt><dd>[&#x27;113227&#x27;]</dd><dt><span>_datastream :</span></dt><dd>sgpsasheniraodC1.c1</dd><dt><span>_arm_standards_flag :</span></dt><dd>1</dd></dl></div></li></ul></div></div></div></div>
+</div>
+</section>
+<section id="plot-time-series-data">
+<h2>Plot time series data<a class="headerlink" href="#plot-time-series-data" title="Permalink to this heading">#</a></h2>
+<section id="define-the-list-of-variables-to-be-plotted">
+<h3>Define the list of variables to be plotted:<a class="headerlink" href="#define-the-list-of-variables-to-be-plotted" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variables_to_plot</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;diffuse_transmittance&#39;</span><span class="p">,</span> <span class="s1">&#39;direct_normal_transmittance&#39;</span><span class="p">,</span> <span class="s1">&#39;aerosol_optical_depth&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts_display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">ts_display</span><span class="o">.</span><span class="n">add_subplots</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">variables_to_plot</span><span class="p">),),</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mf">9.5</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">variables_to_plot</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">variables_to_plot</span><span class="p">):</span>
+    <span class="n">ts_ax</span> <span class="o">=</span> <span class="n">ts_display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="p">,),</span> <span class="n">set_title</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;long_name&#39;</span><span class="p">],)</span>
+    <span class="n">ts_ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "023515a30bb84134b4aeb96747f7dd35", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+<section id="quality-check-plots">
+<h2>Quality check plots<a class="headerlink" href="#quality-check-plots" title="Permalink to this heading">#</a></h2>
+<section id="define-variable-for-qc-plot">
+<h3>Define variable for QC plot<a class="headerlink" href="#define-variable-for-qc-plot" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qc_variable</span> <span class="o">=</span> <span class="s1">&#39;aerosol_optical_depth&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># QC Plot</span>
+<span class="k">if</span> <span class="p">(</span><span class="s1">&#39;qc_&#39;</span><span class="o">+</span><span class="n">qc_variable</span><span class="p">)</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
+
+    <span class="c1"># Plot</span>
+    <span class="n">qc_display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+    <span class="n">qc_display</span><span class="o">.</span><span class="n">add_subplots</span><span class="p">((</span><span class="mi">2</span><span class="p">,),</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mf">9.5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">qc_ax</span> <span class="o">=</span> <span class="n">qc_display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">qc_variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span> <span class="n">set_title</span><span class="o">=</span><span class="s2">&quot;QC results on field: &quot;</span> <span class="o">+</span> <span class="n">qc_variable</span><span class="p">,)</span>
+    <span class="n">qc_ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">qc_display</span><span class="o">.</span><span class="n">qc_flag_block_plot</span><span class="p">(</span><span class="n">qc_variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;QC not available for the selected field: </span><span class="si">{</span><span class="n">qc_variable</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/kefeimo/.conda/envs/jupyter-vaps/lib/python3.8/site-packages/act/utils/datetime_utils.py:136: FutureWarning: Unlike other reduction functions (e.g. `skew`, `kurtosis`), the default behavior of `mode` typically preserves the axis it acts along. In SciPy 1.11.0, this behavior will change: the default value of `keepdims` will become False, the `axis` over which the statistic is taken will be eliminated, and the value None will no longer be accepted. Set `keepdims` to True or False to avoid this warning.
+  mode = stats.mode(np.diff(time))
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9b15c660662d4f8d99958ea600d07e78", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+<section id="field-selection-dropdown-menu">
+<h2>Field selection dropdown menu<a class="headerlink" href="#field-selection-dropdown-menu" title="Permalink to this heading">#</a></h2>
+<p>Select variable to be plotted from a dropdown menu</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">ioff</span><span class="p">()</span>
+
+<span class="c1"># populate dropdown menu with available variables </span>
+<span class="n">available_variables</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span> <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="s1">&#39;time&#39;</span> <span class="ow">in</span> <span class="n">v</span> <span class="ow">or</span> <span class="n">v</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;qc_&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">v</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;source_&#39;</span><span class="p">))</span> <span class="ow">and</span> <span class="s1">&#39;long_name&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">]</span>
+<span class="n">d_variable</span> <span class="o">=</span> <span class="s1">&#39;diffuse_transmittance&#39;</span>
+<span class="n">dropdown</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">[(</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;long_name&#39;</span><span class="p">],</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">available_variables</span><span class="p">],</span>
+    <span class="n">value</span><span class="o">=</span> <span class="n">d_variable</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Field:&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">dropdown</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">margin</span> <span class="o">=</span> <span class="s1">&#39;0px 30% 0px 20%&#39;</span>
+<span class="n">dropdown</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s1">&#39;50%&#39;</span>
+
+<span class="c1"># set up display</span>
+<span class="n">i_display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">i_display</span><span class="o">.</span><span class="n">add_subplots</span><span class="p">((</span><span class="mi">1</span><span class="p">,),</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mf">9.5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">i_ax</span> <span class="o">=</span> <span class="n">i_display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d_variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span> <span class="n">set_title</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">d_variable</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;long_name&#39;</span><span class="p">],)</span>
+<span class="n">i_ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">i_fig</span> <span class="o">=</span> <span class="n">i_display</span><span class="o">.</span><span class="n">fig</span>
+
+<span class="c1"># update plot callback function</span>
+<span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+    <span class="n">i_ax</span><span class="o">.</span><span class="n">cla</span><span class="p">()</span>
+    <span class="n">i_ax_new</span> <span class="o">=</span> <span class="n">i_display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span> <span class="n">set_title</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">variables</span><span class="p">[</span><span class="n">change</span><span class="o">.</span><span class="n">new</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;long_name&#39;</span><span class="p">],)</span>
+    <span class="n">i_ax_new</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">i_fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">i_fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">flush_events</span><span class="p">()</span>
+
+<span class="n">dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
+
+<span class="n">widgets</span><span class="o">.</span><span class="n">AppLayout</span><span class="p">(</span>
+    <span class="n">header</span><span class="o">=</span><span class="n">dropdown</span><span class="p">,</span>
+    <span class="n">center</span><span class="o">=</span><span class="n">i_fig</span><span class="o">.</span><span class="n">canvas</span><span class="p">,</span>
+    <span class="n">pane_heights</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./VAPs/datastream_quicklook/AOD"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="AOD_tutorial.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">SASHENIRAOD.C1 Notebook</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sashevisaod.c1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SASHEVISAOD.C1 Plots</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-site-facility-and-date-range">Define site, facility, and date range</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-site-facility-and-date-range-date-format-yyyy-mm-dd-using-the-variables-below">Define site, facility, and date range (date format: YYYY-MM-DD) using the variables below:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data-files">Load data files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-time-series-data">Plot time series data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-list-of-variables-to-be-plotted">Define the list of variables to be plotted:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-check-plots">Quality check plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-variable-for-qc-plot">Define variable for QC plot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#field-selection-dropdown-menu">Field selection dropdown menu</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ARM Development Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
