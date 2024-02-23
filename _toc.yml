@@ -13,24 +13,23 @@ parts:
     chapters: 
     - file: VAPs/README.md
       sections:
-      title: SQUIRE demo
         - file: VAPs/squire/intro-to-squire.ipynb
 
-    - file: VAPs/datastream_quicklook/datastream.ipynb
-      sections:
-        - file: VAPs/datastream_quicklook/AOD/AOD.md
-          title: AOD
-          sections:
-            - file: VAPs/datastream_quicklook/AOD/AOD_tutorial.ipynb
-            - file: VAPs/datastream_quicklook/AOD/sasheniraod.c1.ipynb
-            - file: VAPs/datastream_quicklook/AOD/sashevisaod.c1.ipynb
-        - file: VAPs/datastream_quicklook/AOP/AOP.md
-          title: AOP
-          sections:
-            - file: VAPs/datastream_quicklook/AOP/AOP_tutorial.ipynb
-            - file: VAPs/datastream_quicklook/AOP/aopclap1flynn1m.c1.ipynb
-            - file: VAPs/datastream_quicklook/AOP/aoppsap1flynn1h.c1.ipynb
-            - file: VAPs/datastream_quicklook/AOP/aoppsap1flynn1m.c1.ipynb
+    - file: VAPs/VAP-notebooks.md
+      # sections:
+      #   - file: VAPs/datastream_quicklook/AOD/AOD.md
+      #     title: AOD
+      #     sections:
+      #       - file: VAPs/datastream_quicklook/AOD/AOD_tutorial.ipynb
+      #       - file: VAPs/datastream_quicklook/AOD/sasheniraod.c1.ipynb
+      #       - file: VAPs/datastream_quicklook/AOD/sashevisaod.c1.ipynb
+      #   - file: VAPs/datastream_quicklook/AOP/AOP.md
+      #     title: AOP
+      #     sections:
+      #       - file: VAPs/datastream_quicklook/AOP/AOP_tutorial.ipynb
+      #       - file: VAPs/datastream_quicklook/AOP/aopclap1flynn1m.c1.ipynb
+      #       - file: VAPs/datastream_quicklook/AOP/aoppsap1flynn1h.c1.ipynb
+      #       - file: VAPs/datastream_quicklook/AOP/aoppsap1flynn1m.c1.ipynb
         # - file: VAPs/datastream_quicklook/BEFLUX/BEFLUX_tutorial.ipynb
         #   title: BEFLUX
         #   sections:
